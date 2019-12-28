@@ -20,7 +20,7 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/12/29/lnK46x.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/12/29/lnK77D.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/12/29/lnKonK.png">
-<meta property="og:updated_time" content="2019-12-28T17:56:09.385Z">
+<meta property="og:updated_time" content="2019-12-28T18:16:33.303Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[原创]App爬虫之无加密&#x2F;简单加密">
 <meta name="twitter:description" content="app爬虫并不是都是噩梦般的存在，对于很多小型公司的app，很多都没有加密，或者非常简单的加密。甚至，由于app的都是json格式的返回，所以非常方便解析。举两个例子。">
@@ -177,7 +177,8 @@
 <p>是一个get请求，非常的简单，只有一个page参数用于翻页。类似的爱范儿也是这种无加密的URL。没什么好说，下面才是重点。</p>
 <h2 id="二、澎湃新闻app——简单加密"><a href="#二、澎湃新闻app——简单加密" class="headerlink" title="二、澎湃新闻app——简单加密"></a>二、澎湃新闻app——简单加密</h2><p>用Charles抓包，填到postman中，经过一顿操作之后，发现只有一个参数WD-UUID是必须的，是一个16位的数字，接下来就是把apk拖到jadx中，反编译，搜索WD-UUID，限制大写，发现只有一个位置有这个参数，非常明显</p>
 <p><img src="https://s2.ax1x.com/2019/12/29/lnKh11.png" alt="jadx01"></p>
-<p>进去一看，这个参数来自this.f2130b，而this.f2130b又来自PaperApp.getUuid()<img src="https://s2.ax1x.com/2019/12/29/lnK46x.png" alt="jadx02"></p>
+<p>进去一看，这个参数来自this.f2130b，而this.f2130b又来自PaperApp.getUuid()</p>
+<p><img src="https://s2.ax1x.com/2019/12/29/lnK46x.png" alt="jadx02"></p>
 <p>进入这个函数getUuid()，发现返回的是f1894a，往上一点看可以看到上面有个setUuid(String str)，里面把str的值送到f1894a中，所以查找str的来源，需要再次搜索setUuid</p>
 <p><img src="https://s2.ax1x.com/2019/12/29/lnK77D.png" alt="jadx04"></p>
 <p>很明显就是第二个，点进去</p>
@@ -283,7 +284,7 @@
   
   
     <a href="/2019/10/06/爬虫的各种效率神器/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">爬虫的各种效率神器</div>
+      <div class="article-nav-title">[原创]爬虫的各种效率神器</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -414,15 +415,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Amazon</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">逆向</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Amazon</a>
               </li>
              
               <li class="article-tag-list-item">
