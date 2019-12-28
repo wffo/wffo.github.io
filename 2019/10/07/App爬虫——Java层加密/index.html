@@ -16,23 +16,23 @@
 <meta property="og:site_name" content="JYCHENILLE&#39;S BLOG">
 <meta property="og:description" content="今天来看一个Java层加密的例子，在应用商店找了好久才找到一个比较简单的例子。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/Users/jychen/Desktop/jadx10.png">
-<meta property="og:image" content="http://yoursite.com/Users/jychen/Desktop/jadx12.png">
-<meta property="og:image" content="http://yoursite.com/Users/jychen/Desktop/jadx14.png">
-<meta property="og:image" content="http://yoursite.com/Users/jychen/Desktop/jadx15.png">
-<meta property="og:image" content="http://yoursite.com/Users/jychen/Desktop/jadx17.png">
-<meta property="og:image" content="http://yoursite.com/Users/jychen/Desktop/jadx18.png">
-<meta property="og:image" content="http://yoursite.com/Users/jychen/Desktop/jadx19.png">
-<meta property="og:image" content="http://yoursite.com/Users/jychen/Desktop/jadx20.png">
-<meta property="og:image" content="http://yoursite.com/Users/jychen/Desktop/jadx21.png">
-<meta property="og:image" content="http://yoursite.com/Users/jychen/Desktop/jadx22.png">
-<meta property="og:image" content="http://yoursite.com/Users/jychen/Desktop/jadx23.png">
-<meta property="og:image" content="http://yoursite.com/Users/jychen/Desktop/jadx26.png">
-<meta property="og:updated_time" content="2019-12-28T02:05:10.804Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/12/29/lnKbAe.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/12/29/lnK5X6.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/12/29/lnKqtH.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/12/29/lnKLhd.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/12/29/lnKvct.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/12/29/lnKxjP.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/12/29/lnMSnf.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/12/29/lnMVcq.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/12/29/lnME3n.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/12/29/lnMA9s.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/12/29/lnMFhj.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/12/29/lnMZj0.png">
+<meta property="og:updated_time" content="2019-12-28T18:01:31.595Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[原创]app爬虫之Java层加密——必看小说app">
 <meta name="twitter:description" content="今天来看一个Java层加密的例子，在应用商店找了好久才找到一个比较简单的例子。">
-<meta name="twitter:image" content="http://yoursite.com/Users/jychen/Desktop/jadx10.png">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/12/29/lnKbAe.png">
   
     <link rel="alternative" href="/atom.xml" title="JYCHENILLE&#39;S BLOG" type="application/atom+xml">
   
@@ -186,29 +186,30 @@
 <p><code>bookType=0&amp;pageNum=2&amp;sign=72a19e1c3edd0191b179e9d097be1dba&amp;sort=0&amp;subClassifyId=103&amp;tagId=&amp;time=1577337726385.949219&amp;userPath=A2%2CB</code></p>
 <p>这种是最常见的加密方式，拼接多个搜索字段，然后中间夹杂一两个加密参数，比如这个body中的sign，所以重点就是找到sign的生成方式。加密参数的生成一般会用到time时间戳，因为只有这样才能实现api的实效性，不然可以使用固定的时间戳，轻松破解。一般app的api实效性在1-5分钟。下面是解密步骤。</p>
 <p>把apk拉入jadx反编译，搜索参数sign，显然这会找到很多不相关的信息，所以有个很常用的技巧，加个双引号，或者前面加个空格，或者后面加个空格。</p>
-<p><img src="/Users/jychen/Desktop/jadx10.png" alt="jadx10"></p>
+<p><img src="https://s2.ax1x.com/2019/12/29/lnKbAe.png" alt="jadx10"></p>
 <p>还有一个常用的技巧是，看包名排除大部分搜索结果，比如上面很明显什么huawei、meizu就是可以排除的。前面几个都是很可能的加密入口，逐一查看，可以确定是第六个(你可能会觉得是第二个，实际上点进去发现参数并不符合)。</p>
-<p><img src="/Users/jychen/Desktop/jadx12.png" alt="jadx12"></p>
+<p><img src="https://s2.ax1x.com/2019/12/29/lnK5X6.png" alt="jadx12"></p>
 <p>点开一看，主要加密方法就是在这个函数里实现的，所以可以开始动手分析。开始的backUpParams()应该就是更新参数的意思，望文生义，其实可以点开看，比较明显。接下来就是获取时间戳，然后把params的集合中，每个key和value用=连起来，放到 ArrayList中，然后用Collections.sort(arrayList)排序一下，按照字母先后。然后新建了一个StringBuilder，先是加入一个sAESKey，再把ArrayList中每个项用&amp;连接起来，最后用c.f()加密一下。看起来困难重重，一个个来。</p>
 <p>c.f()是什么？点进去一看，原来是个md5。绿色部分是jadx的问题，可以设置解决，自行百度。</p>
-<p><img src="/Users/jychen/Desktop/jadx14.png" alt="jadx14"></p>
+<p><img src="https://s2.ax1x.com/2019/12/29/lnKqtH.png" alt="jadx14"></p>
 <p>接下来寻找params是什么，从经验上来看，就是body中的各个字段，但是经验往往不靠谱。直接在这个页面搜索params，看看有没有什么结果。</p>
-<p><img src="/Users/jychen/Desktop/jadx15.png" alt="jadx15"></p>
+<p><img src="https://s2.ax1x.com/2019/12/29/lnKLhd.png" alt="jadx15"></p>
 <p>在一个叫onStartTaskPost的函数中，看到params来自map，所以接下来找到map的来源，搜索onStartTaskPost</p>
-<p><img src="/Users/jychen/Desktop/jadx17.png" alt="jadx17"></p>
+<p><img src="https://s2.ax1x.com/2019/12/29/lnKvct.png" alt="jadx17"></p>
 <p>搜索到很多的结果，但是通过对比我们要找的URL，可以找到对应的位置/api/bookstore/bookInfoList，进入</p>
-<p><img src="/Users/jychen/Desktop/jadx18.png" alt="jadx18"></p>
-<p>这个map又来自map，所以再次查看k，肯定不能搜索k了，因为就一个字母，因为这里是用了混淆，所以肯定就在这个页面就可以找到k的来源，往上看（一般都是往上看，不往下看）<img src="/Users/jychen/Desktop/jadx19.png" alt="jadx19"></p>
+<p><img src="https://s2.ax1x.com/2019/12/29/lnKxjP.png" alt="jadx18"></p>
+<p>这个map又来自map，所以再次查看k，肯定不能搜索k了，因为就一个字母，因为这里是用了混淆，所以肯定就在这个页面就可以找到k的来源，往上看（一般都是往上看，不往下看）<img src="https://s2.ax1x.com/2019/12/29/lnMSnf.png" alt="jadx19"></p>
 <p>对比body中需要的参数，所以是第二个。到这里就可以知道需要的parmas的字段有哪几个了。到了这里还没完，在前面的分析中，我们发现StringBuilder中加了一个参数sAESKey，这个sAESKey是什么样的值呢？继续分析</p>
 <p>这里不能直接commad点进去，要在sAESKey上右击，查找用例，找到</p>
-<p><img src="/Users/jychen/Desktop/jadx20.png" alt="jadx20"></p>
+<p><img src="https://s2.ax1x.com/2019/12/29/lnMVcq.png" alt="jadx20"></p>
 <p>明显就是第一个，点进去</p>
-<p><img src="/Users/jychen/Desktop/jadx21.png" alt="jadx21"></p>
+<p><img src="https://s2.ax1x.com/2019/12/29/lnME3n.png" alt="jadx21"></p>
 <p>同样，搜索setAESKey，下面就不太详细了</p>
-<p><img src="/Users/jychen/Desktop/jadx22.png" alt="jadx22"></p>
+<p><img src="https://s2.ax1x.com/2019/12/29/lnMA9s.png" alt="jadx22"></p>
 <p>进入c.m()</p>
-<p><img src="/Users/jychen/Desktop/jadx23.png" alt="jadx23"></p>
-<p>其中的String(a)是“roey”，但是R.string.key01是2131427569，这显然有点奇怪。经过百度getResources()这个函数，才知道这是安卓的写法，叫做字符映射，真实的字符在res的strings.xml中<img src="/Users/jychen/Desktop/jadx26.png" alt="jadx26"></p>
+<p><img src="https://s2.ax1x.com/2019/12/29/lnMFhj.png" alt="jadx23"></p>
+<p>其中的String(a)是“roey”，但是R.string.key01是2131427569，这显然有点奇怪。经过百度getResources()这个函数，才知道这是安卓的写法，叫做字符映射，真实的字符在res的strings.xml中</p>
+<p><img src="https://s2.ax1x.com/2019/12/29/lnMZj0.png" alt="jadx26"></p>
 <p>所以sAESKey最终字段是7b7fpld4roey0e6e，到这里，解密最终完成，拼接完字段后，md5后，实测和sign一样。</p>
 
       
@@ -439,10 +440,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Amazon</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
               </li>
              
@@ -451,7 +448,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">selenium</a>
+                <a href="javascript:void(0)" class="js-tag color2">Amazon</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -468,6 +465,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">UI设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">selenium</a>
               </li>
             
             <div class="clearfix"></div>

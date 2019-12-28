@@ -16,15 +16,15 @@
 <meta property="og:site_name" content="JYCHENILLE&#39;S BLOG">
 <meta property="og:description" content="app爬虫并不是都是噩梦般的存在，对于很多小型公司的app，很多都没有加密，或者非常简单的加密。甚至，由于app的都是json格式的返回，所以非常方便解析。举两个例子。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/Users/jychen/Desktop/jadx01.png">
-<meta property="og:image" content="http://yoursite.com/Users/jychen/Desktop/jadx02.png">
-<meta property="og:image" content="http://yoursite.com/Users/jychen/Desktop/jadx04.png">
-<meta property="og:image" content="http://yoursite.com/Users/jychen/Desktop/jadx05.png">
-<meta property="og:updated_time" content="2019-12-28T01:57:20.114Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/12/29/lnKh11.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/12/29/lnK46x.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/12/29/lnK77D.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/12/29/lnKonK.png">
+<meta property="og:updated_time" content="2019-12-28T17:56:09.385Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[原创]App爬虫之无加密&#x2F;简单加密">
 <meta name="twitter:description" content="app爬虫并不是都是噩梦般的存在，对于很多小型公司的app，很多都没有加密，或者非常简单的加密。甚至，由于app的都是json格式的返回，所以非常方便解析。举两个例子。">
-<meta name="twitter:image" content="http://yoursite.com/Users/jychen/Desktop/jadx01.png">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/12/29/lnKh11.png">
   
     <link rel="alternative" href="/atom.xml" title="JYCHENILLE&#39;S BLOG" type="application/atom+xml">
   
@@ -176,12 +176,12 @@
 <p><code>https://opser.api.dgtle.com/v1/app/index?page=2</code></p>
 <p>是一个get请求，非常的简单，只有一个page参数用于翻页。类似的爱范儿也是这种无加密的URL。没什么好说，下面才是重点。</p>
 <h2 id="二、澎湃新闻app——简单加密"><a href="#二、澎湃新闻app——简单加密" class="headerlink" title="二、澎湃新闻app——简单加密"></a>二、澎湃新闻app——简单加密</h2><p>用Charles抓包，填到postman中，经过一顿操作之后，发现只有一个参数WD-UUID是必须的，是一个16位的数字，接下来就是把apk拖到jadx中，反编译，搜索WD-UUID，限制大写，发现只有一个位置有这个参数，非常明显</p>
-<p><img src="/Users/jychen/Desktop/jadx01.png" alt="jadx01"></p>
-<p>进去一看，这个参数来自this.f2130b，而this.f2130b又来自PaperApp.getUuid()<img src="/Users/jychen/Desktop/jadx02.png" alt="jadx02"></p>
+<p><img src="https://s2.ax1x.com/2019/12/29/lnKh11.png" alt="jadx01"></p>
+<p>进去一看，这个参数来自this.f2130b，而this.f2130b又来自PaperApp.getUuid()<img src="https://s2.ax1x.com/2019/12/29/lnK46x.png" alt="jadx02"></p>
 <p>进入这个函数getUuid()，发现返回的是f1894a，往上一点看可以看到上面有个setUuid(String str)，里面把str的值送到f1894a中，所以查找str的来源，需要再次搜索setUuid</p>
-<p><img src="/Users/jychen/Desktop/jadx04.png" alt="jadx04"></p>
+<p><img src="https://s2.ax1x.com/2019/12/29/lnK77D.png" alt="jadx04"></p>
 <p>很明显就是第二个，点进去</p>
-<p><img src="/Users/jychen/Desktop/jadx05.png" alt="jadx05"></p>
+<p><img src="https://s2.ax1x.com/2019/12/29/lnKonK.png" alt="jadx05"></p>
 <p>看到这行代码</p>
 <p><code>String uuid = UUID.randomUUID().toString();</code></p>
 <p>看函数名应该就是随机生成的，为了验证是否是这样的，在postman中修改一个数值，如果不影响的话，那么就可以确定是随机生成的，实测结果确实如此。</p>
@@ -414,10 +414,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Amazon</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
               </li>
              
@@ -426,7 +422,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">selenium</a>
+                <a href="javascript:void(0)" class="js-tag color2">Amazon</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -443,6 +439,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">UI设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">selenium</a>
               </li>
             
             <div class="clearfix"></div>

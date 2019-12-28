@@ -16,12 +16,12 @@
 <meta property="og:site_name" content="JYCHENILLE&#39;S BLOG">
 <meta property="og:description" content="折腾了一周多，终于弄出了一个app，也通过多个应用商店的审核，这一点倒是比较惊讶。虽然都遵循一切从简的原则，但也实现了大部分想要的功能。记录一下整个设计过程，只适合小白阅读（怕大佬笑喷），绝对详细(在网上确实很难找到一个完整的教程)。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/Users/jychen/Desktop/logo.png">
-<meta property="og:updated_time" content="2019-12-28T01:49:44.502Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/12/29/lnKB60.png">
+<meta property="og:updated_time" content="2019-12-28T17:49:58.020Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[原创]从0到1打造一个找房app">
 <meta name="twitter:description" content="折腾了一周多，终于弄出了一个app，也通过多个应用商店的审核，这一点倒是比较惊讶。虽然都遵循一切从简的原则，但也实现了大部分想要的功能。记录一下整个设计过程，只适合小白阅读（怕大佬笑喷），绝对详细(在网上确实很难找到一个完整的教程)。">
-<meta name="twitter:image" content="http://yoursite.com/Users/jychen/Desktop/logo.png">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/12/29/lnKB60.png">
   
     <link rel="alternative" href="/atom.xml" title="JYCHENILLE&#39;S BLOG" type="application/atom+xml">
   
@@ -186,7 +186,7 @@
 <h3 id="三、起名和logo设计"><a href="#三、起名和logo设计" class="headerlink" title="三、起名和logo设计"></a>三、起名和logo设计</h3><p>设计第一个app，你可能没有经验，那么有个简单有效的办法，用动物的名字+你要做的领域的名字，比如，大象英语，松鼠阅读，至少一看就知道是干嘛的，而且不会很 low，还省时间。</p>
 <p>logo设计很多人喜欢去某某网站自动生成，其实都是几个字符，换个字体，设计出来会发现跟你的app名字没啥关系，这个我也没啥好方法，不过有个原则就是不会就从简，否则画蛇添足。</p>
 <p>因为这个app的定位是找房类软件，很多软件都自称闪电XX，其实慢如蜗牛，额，所以就反其道而行之，取名蜗牛找房。logo设计也是比较随意设计的，我记得只花了不到半小时，取了蜗牛的第一个字符w，然后蜗牛有一对长在头顶的眼睛，所以就画了一个圈，再做个阴影。底色在Google design的设计规范里选了一个黄色，就是这样了。</p>
-<p><img src="/Users/jychen/Desktop/logo.png" alt="logo"></p>
+<p><img src="https://s2.ax1x.com/2019/12/29/lnKB60.png" alt="https://s2.ax1x.com/2019/12/29/lnKB60.png"></p>
 <h2 id="四、UI设计"><a href="#四、UI设计" class="headerlink" title="四、UI设计"></a>四、UI设计</h2><p>这一点当初没有想好，所以做出来蛮丑的，虽然当时在站酷上看了不少租房类的软件UI设计，但是都很一般。但其实对于新手来说，想法再好，但是技术不够也只能抛弃想法。推荐新手一个办法，有个<a href="https://pub.flutter-io.cn/" target="_blank" rel="noopener">flutter网站</a>，这里有很多成品，看哪个顺眼拿来就用，拼拼凑凑就能凑出一个app（其实并不能）。你开始以为这样很没水平，但是拿来后发现怎么跟自己想要的不一样啊，就开始改代码，改着改着，发现错误越改越多，理解就更深刻，回头一看那个成品，已经看不出原来的模样，变成自己的东西了。话虽如此，但是我不能保证这样是好的学习路径。</p>
 <p>在已经入了门的情况下，肯定要先设计UI，而不是拿别人的代码来改。但又有一个问题，你不是一个设计师（当然也有可能是），所以可以参考其他人的作品，推荐国内的站酷，国外的<a href="https://www.uplabs.com/" target="_blank" rel="noopener">uplabs</a>。</p>
 <h2 id="五、数据和数据库"><a href="#五、数据和数据库" class="headerlink" title="五、数据和数据库"></a>五、数据和数据库</h2><p>如果你是用自己的数据，就需要准备一个数据库来存放数据，但是有很多人是不需要数据，因为他们用的别的app的API，比如你用京东的某个品类列表的API，你只要调用他们的API就行。所以数据并不是放在app中（当然少量数据放在app也是可行的），而是放在服务器上，关键是要生成一个API，让app能够调用这个API获取数据，一般是json格式的。</p>
@@ -436,10 +436,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Amazon</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
               </li>
              
@@ -448,7 +444,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">selenium</a>
+                <a href="javascript:void(0)" class="js-tag color2">Amazon</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -465,6 +461,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">UI设计</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">selenium</a>
               </li>
             
             <div class="clearfix"></div>
