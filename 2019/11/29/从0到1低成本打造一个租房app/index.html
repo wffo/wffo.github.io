@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>[原创]从0到1打造一个找房app | JYCHENILLE&#39;S BLOG</title>
+  <title>[原创]从0到1打造一个找房app(已上线) | JYCHENILLE&#39;S BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="折腾了一周多，终于弄出了一个app，也通过多个应用商店的审核，这一点倒是比较惊讶。虽然都遵循一切从简的原则，但也实现了大部分想要的功能。记录一下整个设计过程，只适合小白阅读（怕大佬笑喷），绝对详细(在网上确实很难找到一个完整的教程)。">
-<meta name="keywords" content="flutter,golang">
+<meta name="keywords" content="golang,flutter">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[原创]从0到1打造一个找房app">
+<meta property="og:title" content="[原创]从0到1打造一个找房app(已上线)">
 <meta property="og:url" content="http://yoursite.com/2019/11/29/从0到1低成本打造一个租房app/index.html">
 <meta property="og:site_name" content="JYCHENILLE&#39;S BLOG">
 <meta property="og:description" content="折腾了一周多，终于弄出了一个app，也通过多个应用商店的审核，这一点倒是比较惊讶。虽然都遵循一切从简的原则，但也实现了大部分想要的功能。记录一下整个设计过程，只适合小白阅读（怕大佬笑喷），绝对详细(在网上确实很难找到一个完整的教程)。">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://s2.ax1x.com/2019/12/29/lnKB60.png">
-<meta property="og:updated_time" content="2019-12-28T17:49:58.020Z">
+<meta property="og:updated_time" content="2019-12-28T21:02:55.219Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[原创]从0到1打造一个找房app">
+<meta name="twitter:title" content="[原创]从0到1打造一个找房app(已上线)">
 <meta name="twitter:description" content="折腾了一周多，终于弄出了一个app，也通过多个应用商店的审核，这一点倒是比较惊讶。虽然都遵循一切从简的原则，但也实现了大部分想要的功能。记录一下整个设计过程，只适合小白阅读（怕大佬笑喷），绝对详细(在网上确实很难找到一个完整的教程)。">
 <meta name="twitter:image" content="https://s2.ax1x.com/2019/12/29/lnKB60.png">
   
@@ -154,7 +154,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      [原创]从0到1打造一个找房app
+      [原创]从0到1打造一个找房app(已上线)
     </h1>
   
 
@@ -169,7 +169,9 @@
       
         <p>折腾了一周多，终于弄出了一个app，也通过多个应用商店的审核，这一点倒是比较惊讶。虽然都遵循一切从简的原则，但也实现了大部分想要的功能。记录一下整个设计过程，只适合小白阅读（怕大佬笑喷），绝对详细(在网上确实很难找到一个完整的教程)。</p>
 <a id="more"></a>
-<p>虽然用时不多就开发完成，但要认清一个事实是：这是用10%的精力去做50%的效果，后面50%的效果要花90%的力气甚至更多去做到相对完美，就像做能吃的饭，大家一学就会，但是做很好吃的饭，就要花数十年的学习才能达到。总之，能用跟好用是两码事。额，好像跑题了。<a href="https://appstore.huawei.com/app/C101417311" target="_blank" rel="noopener">蜗牛找房app华为应用商店下载地址</a></p>
+<p>虽然用时不多就开发完成，但要认清一个事实是：这是用10%的精力去做50%的效果，后面50%的效果要花90%的力气甚至更多去做到相对完美，就像做能吃的饭，大家一学就会，但是做很好吃的饭，就要花数十年的学习才能达到。额，好像跑题了。总之，能用跟好用是两码事。</p>
+<p><a href="https://appstore.huawei.com/app/C101417311" target="_blank" rel="noopener">蜗牛找房app华为应用商店下载地址</a></p>
+<p><a href="https://shouji.baidu.com/software/26610273.html" target="_blank" rel="noopener">蜗牛找房app百度手机助手下载地址</a></p>
 <h2 id="一、前期准备"><a href="#一、前期准备" class="headerlink" title="一、前期准备"></a>一、前期准备</h2><p>一个备案过的网站、一个稳定的代理（可以用讯代理）</p>
 <p>软件：sketch、goland、vim、ftp工具、ssh工具（mac下不需要）</p>
 <p>开发语言：golang、dart</p>
@@ -220,11 +222,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">flutter</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">golang</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">golang</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">flutter</a>
         		</li>
       		
 		</ul>
@@ -444,6 +446,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">golang</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">逆向</a>
               </li>
              
@@ -452,7 +458,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">golang</a>
+                <a href="javascript:void(0)" class="js-tag color4">selenium</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -461,10 +467,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">UI设计</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">selenium</a>
               </li>
             
             <div class="clearfix"></div>
