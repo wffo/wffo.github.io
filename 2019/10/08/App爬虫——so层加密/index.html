@@ -6,15 +6,35 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | JYCHENILLE&#39;S BLOG</title>
+  <title>[原创]App爬虫之so层加密——毒app | JYCHENILLE&#39;S BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="JYCHENILLE&#39;S BLOG">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="在上一篇文章中，我们看到了java层的加密，其中的要点是加了一个混淆的字段sAESKey，而这个字段其实很好获取到，你可能会想到，能不能把这个字段放到比较隐秘的地方，甚至很难获取到的地方，这样就难以破解了。确实，现在大部分的app都会把加密的部分放到so文件中，比如本文要写的，毒app。">
+<meta name="keywords" content="爬虫,逆向">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[原创]App爬虫之so层加密——毒app">
+<meta property="og:url" content="http://yoursite.com/2019/10/08/App爬虫——so层加密/index.html">
 <meta property="og:site_name" content="JYCHENILLE&#39;S BLOG">
+<meta property="og:description" content="在上一篇文章中，我们看到了java层的加密，其中的要点是加了一个混淆的字段sAESKey，而这个字段其实很好获取到，你可能会想到，能不能把这个字段放到比较隐秘的地方，甚至很难获取到的地方，这样就难以破解了。确实，现在大部分的app都会把加密的部分放到so文件中，比如本文要写的，毒app。">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/Users/jychen/Desktop/jadx30.png">
+<meta property="og:image" content="http://yoursite.com/Users/jychen/Desktop/jdax31.png">
+<meta property="og:image" content="http://yoursite.com/Users/jychen/Desktop/jadx33.png">
+<meta property="og:image" content="http://yoursite.com/Users/jychen/Desktop/jadx37.png">
+<meta property="og:image" content="http://yoursite.com/Users/jychen/Desktop/jadx35.png">
+<meta property="og:image" content="http://yoursite.com/Users/jychen/Desktop/jdax36.png">
+<meta property="og:image" content="http://yoursite.com/Users/jychen/Desktop/jadx37.png">
+<meta property="og:image" content="http://yoursite.com/Users/jychen/Desktop/jdax40.png">
+<meta property="og:image" content="http://yoursite.com/Users/jychen/Desktop/jadx41.png">
+<meta property="og:image" content="http://yoursite.com/Users/jychen/Desktop/jadx42.png">
+<meta property="og:image" content="http://yoursite.com/Users/jychen/Desktop/jadx43.png">
+<meta property="og:image" content="http://yoursite.com/Users/jychen/Desktop/jadx44.png">
+<meta property="og:image" content="http://yoursite.com/Users/jychen/Desktop/jadx45.png">
+<meta property="og:image" content="http://yoursite.com/Users/jychen/Desktop/jadx46.png">
+<meta property="og:updated_time" content="2019-12-28T02:13:16.276Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JYCHENILLE&#39;S BLOG">
+<meta name="twitter:title" content="[原创]App爬虫之so层加密——毒app">
+<meta name="twitter:description" content="在上一篇文章中，我们看到了java层的加密，其中的要点是加了一个混淆的字段sAESKey，而这个字段其实很好获取到，你可能会想到，能不能把这个字段放到比较隐秘的地方，甚至很难获取到的地方，这样就难以破解了。确实，现在大部分的app都会把加密的部分放到so文件中，比如本文要写的，毒app。">
+<meta name="twitter:image" content="http://yoursite.com/Users/jychen/Desktop/jadx30.png">
   
     <link rel="alternative" href="/atom.xml" title="JYCHENILLE&#39;S BLOG" type="application/atom+xml">
   
@@ -140,120 +160,76 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-App爬虫——so层加密" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/22/蜗牛找房全新UI设计/" class="archive-article-date">
-  	<time datetime="2019-12-21T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-22</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/22/蜗牛找房全新UI设计/">[原创]蜗牛找房全新UI设计</a>
+    <h1 class="article-title" itemprop="name">
+      [原创]App爬虫之so层加密——毒app
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">sketch</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">UI设计</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/29/从0到1低成本打造一个租房app/" class="archive-article-date">
-  	<time datetime="2019-11-28T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/29/从0到1低成本打造一个租房app/">[原创]从0到1打造一个找房app</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">flutter</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">golang</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/08/App爬虫——so层加密/" class="archive-article-date">
+        
+        <a href="/2019/10/08/App爬虫——so层加密/" class="archive-article-date">
   	<time datetime="2019-10-07T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-08</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/08/App爬虫——so层加密/">[原创]App爬虫之so层加密——毒app</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在上一篇文章中，我们看到了java层的加密，其中的要点是加了一个混淆的字段sAESKey，而这个字段其实很好获取到，你可能会想到，能不能把这个字段放到比较隐秘的地方，甚至很难获取到的地方，这样就难以破解了。确实，现在大部分的app都会把加密的部分放到so文件中，比如本文要写的，毒app。</p>
+<a id="more"></a>
+<p>先用Charles抓包看看参数，过程略，可以看到有一个参数newSign会变化，除此之外我们还发现另一个sign这个参数，这个参数在多次请求都不会变化，但是不能去除或者修改，否则出错，根据这一特征，初步判断是对请求环境生成的一个参数，比如手机品牌，型号，分辨率等。可以自行手动验证。这个不是重点，略过。接下来就是newSign这个参数的解密。</p>
+<p>第一步拖到jadx反编译，搜索newSign的生成位置</p>
+<p><img src="/Users/jychen/Desktop/jadx30.png" alt="jadx30"></p>
+<p>很明显currentTimeMillis就是时间戳，先分析hashMap3，很明显，就是把url中的参数放到一个hashMap中，但是注意到它把参数的值取出来之后，并不是直接放入hashMap，而是还调了一次DecodeUtils.a()，点开看一下，发现看不懂，但是根据猜测应该是对中文字符的转换，因为URL中的中文是会进行编码的，这里暂时不管，后面再看。接下来是最后的一步，解密RequestUtils.a这个函数究竟写了啥。</p>
+<p><img src="/Users/jychen/Desktop/jdax31.png" alt="jdax31"></p>
+<p>前面一段是在map中再加入了几个参数uuid,platform,loginToken,timestamp，然后按照key名排序，这说明这些参数都是不能缺少的，这也在postman中验证了。再后面就是把map中所有字段一个个连起来，跟前面破解必看小说不一样的是，这里并没有使用任何链接符号，直接放在一起。后面看到有个a2的参数，实际没用到，直接跳过。接下来就是获取BaseApplication.a()的值，点开</p>
+<p><img src="/Users/jychen/Desktop/jadx33.png" alt="jadx33"></p>
+<p>而d只是实例化一下而已，并不是一个基本类型，再看AESEncrypt.a</p>
+<p><img src="/Users/jychen/Desktop/jadx37.png" alt="jadx37"></p>
+<p>确实如此，第一个参数不是基本类型，这里把之前拼接成的string放进来，进行加密，先是生成一个byteValues，点开getByteValues</p>
+<p><img src="/Users/jychen/Desktop/jadx35.png" alt="jadx35"></p>
+<p>发现有个native的修饰词（java中是这么叫的吧？？），表明这个函数来自so文件</p>
+<p><img src="/Users/jychen/Desktop/jdax36.png" alt="jdax36"></p>
+<p>来自libJNIEncrypt这个so文件，在res的lib目录中确实发现了这个名字的so文件，我们先不管拿到的是什么，接下去往下看</p>
+<p><img src="/Users/jychen/Desktop/jadx37.png" alt="jadx37"></p>
+<p>这里拿到这个参数之后，把每个位置的0和1互换了一下，所以我们拿到的东西很大可能是一串类似二进制数一样的东西，当然也有可能是纯数字，先做个假设。最后把这个数值放到encodeByte中，而encodeByte也是native，所以也在so文件中。对于so文件，我们最容易想到的就是写个安卓程序直接调用so不就知道了吗？过程就略了，实测最终调用getByteValues()生成的一个192的二进制数，很明显这个数是固定的。</p>
+<p><code>010110100010001010010010000011000111001011101010101000101110111010011010101101101010001000101100010110100010001010011010110011001111001011100010101000100100110010110010100010101011110010111100</code></p>
+<p>看到192位的二进制数，可以猜测，这是使用aes加密算法，因为aes加密的密钥要求128位、192位、256位的二进制数。再进一步验证encodeByte，把之前拼接成的string和这个192位的二进制数放进去，然后把生成的string再md5，跟newSign做对比，实测结果一致。这里有个小坑，拼接string用到的loginToken，而实际的URL中，是logintoken，T变成了小写，这个应该不是故意为之，在这里花了一些时间才发现这个问题。到了这一步解密的步骤就基本完成了。理一下过程</p>
+<p>从URL中取每个参数，放入map</p>
+<p>map中再加入几个参数uuid，loginToken，platform，timestamp</p>
+<p>按key排序后，拼接字符串</p>
+<p>获取一个192位的密钥</p>
+<p>使用密钥加密拼接好的字符串，然后取md5，就是newSign的值了</p>
+<p>但这里是安卓调用so文件，只能运行在arm平台，并不能在x86平台上运行，关于在x86上模拟arm调用so文件这样的类似仿真器的东西，GitHub上有个叫unicorn和AndroidNativeEmu的，目前在研究中，欢迎做逆向的互相交流。不过仿真这个太过于硬核，也有很多取巧的方法，比如hook，用Frida可以hook到so中的函数，另一种方法我觉得比较可行的是在app搭建http server，把手机变成服务器一样的东西，但是我没试过，毕竟没有这方面的需求。但是无论什么方式，终究还不稳定，不能放到服务器上跑，因为hook是需要手机用数据线连接到电脑，搭http server也摆脱不了手机。最好的方法就是模拟arm，目前都是基于unicorn做的，但是网上资料太少，学习难度大。</p>
+<p>除了上面提到的方法，还有一种比较流行方式就是直接看so文件，从so文件里面找解密过程，这种解密就比较硬核了。so文件不是二进制吗？还能解出啥来？使用反汇编工具，还是能解出来些东西，前提是要懂汇编语言，可惜我压根看不懂，还好这个例子比较简单。实际上在很多逆向群里，都有这种解密的需求，正常的so解密在几百到几千都有，取决于复杂程度，所以这肯定不是一个简单的过程。</p>
+<p>把libJNIEncrypt.so在IDA中打开，并没有看到对应的Java开头的getByteValue，所以这很可能采用了动态注册。打开JNI_Onload</p>
+<p><img src="/Users/jychen/Desktop/jdax40.png" alt="jdax40"></p>
+<p>并没有发现RegisterNatives，看到有个跳转，到j_register_ndk_load，点进去看，按f5查看伪代码</p>
+<p><img src="/Users/jychen/Desktop/jadx41.png" alt="jadx41"></p>
+<p>在a1上选中按y，替换为JNIEnv*</p>
+<p><img src="/Users/jychen/Desktop/jadx42.png" alt="jadx42"></p>
+<p>结果</p>
+<p><img src="/Users/jychen/Desktop/jadx43.png" alt="jadx43"></p>
+<p>发现了RegisterNatives，选中RegisterNatives函数名，然后右键选择Force call type</p>
+<p><img src="/Users/jychen/Desktop/jadx44.png" alt="jadx44"></p>
+<p>这里就是动态注册的部分了，点进地址off_6008，看到</p>
+<p><img src="/Users/jychen/Desktop/jadx45.png" alt="jadx45"></p>
+<p>其中我们要的getByteValues注册成get_bytes，encodeByte注册成encode，所以我们在左侧的函数窗口查找get_bytes和encode就好了，由于前面说过，get_bytes是返回一个固定的192位二进制，所以就略过了。直接看encode，伪代码如下</p>
+<p><img src="/Users/jychen/Desktop/jadx46.png" alt="jadx46"></p>
+<p>先做base64，再aes，而aes加密需要的参数可以从这个函数名获得，ecb模式，128位区块长度，填充是PKCS5Padding，所以就可以得到最后的加密结果，基本属于瞎猫碰上死耗子。</p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -269,263 +245,128 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/08/App爬虫——so层加密/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/07/App爬虫——Java层加密/" class="archive-article-date">
-  	<time datetime="2019-10-06T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-07</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2019/11/29/从0到1低成本打造一个租房app/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          [原创]从0到1打造一个找房app
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/10/07/App爬虫——Java层加密/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">[原创]app爬虫之Java层加密——必看小说app</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/07/App爬虫——Java层加密/">[原创]app爬虫之Java层加密——必看小说app</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">爬虫</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">逆向</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    目录，不存在的…
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/06/App爬虫——无加密&简单加密/" class="archive-article-date">
-  	<time datetime="2019-10-05T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-06</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/06/App爬虫——无加密&简单加密/">[原创]App爬虫之无加密/简单加密</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">爬虫</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">逆向</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/06/爬虫的各种效率神器/" class="archive-article-date">
-  	<time datetime="2019-10-05T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/06/爬虫的各种效率神器/">爬虫的各种效率神器</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">爬虫</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/15/Web端反爬虫的各种常见手段/" class="archive-article-date">
-  	<time datetime="2019-07-14T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/15/Web端反爬虫的各种常见手段/">[原创]Web端反爬虫的各种常见手段</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">爬虫</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/02/(原创)亚马逊无主ASIN采集，美国商标网商标查询，Google爬虫/" class="archive-article-date">
-  	<time datetime="2019-07-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/02/(原创)亚马逊无主ASIN采集，美国商标网商标查询，Google爬虫/">(原创)亚马逊无主ASIN采集，美国商标网商标查询，Google爬虫</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Amazon</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">爬虫</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/10/神奇的Selenium以及反selenium的解决方案/" class="archive-article-date">
-  	<time datetime="2019-06-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/10/神奇的Selenium以及反selenium的解决方案/">[原创]神奇的Selenium以及反selenium的解决方案</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">爬虫</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">selenium</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -548,8 +389,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
